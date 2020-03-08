@@ -1,62 +1,33 @@
-= Wyzwanie TDD Kata
+# wyzwanie-kata-tdd
+Wyzwanie TDD Kata https://github.com/kubamarchwicki/wyzwanie-tdd-kata
+  Każdy uczestnik tworzy swoją kopie projektu (fork) i tam pracuje  Zadanie jest dostępne na githubie https://github.com/kubamarchwicki/wyzwanie-tdd-kata  
+Tworzymy branch, robimy zadanie, tworzymy pull requesta  Codziennie rano przeglądamy podesłane rozwiązania, omawiamy, przygotowujemy referencyjną implementację.  
+Omawiamy kolejne zadanie i wracamy do punktu 2  
+Zasady udanej katy:
 
-== https://github.com/kubamarchwicki/wyzwanie-tdd-kata
+Pracujemy tylko nad jednym wymaganiem na raz  
+Nie interesuje nas to co będzie w następnych wymaganiach  
+Piszemy tylko tyle kodu ile jest potrzebne by wymaganie zostało spełnione  
+Testujemy tylko pozytywne scenariusze (chyba, że w wymaganiu jest inaczej)  
+Pracujemy zgodnie z zasadmi TDD – Red, Green, Refactor  Zadanie: String calculator Tworzymy kalulator  
+Kalkulator ma być prosty (naiwna implementacja)  
+Dowolna ilość parametrów  
+Liczby oddzielone znakiem (na początek przecinkiem) 
+Wsparcie dla różnych separatorów  Dodajemy tylko liczny dodatnie 
+Ograniczamy zakres  
+Separator dowolnej długości 
+Więcej niż jeden separator  
+Więcej niż jeden separator różnej długości 
 
-== Test Katas
+Zadanie 1. Prosty kalkulator Utwórz prostą metodę przyjmującą wyrażenie typu String jako parametr.  Metoda może przyjmować 0, 1 lub 2 liczby oddzielone przecinkami i zwraca ich sumę (pusty string zwraca 0)
+Przykład: ` ` lub 1 lub 1,2  Tips Zacznij od testu dla pustego parametru. 
+Następnie test dla jednego parametru i w następnym kroku dla dwóch.  
+Pamiętaj o tym by rozwiązania, które implementujeszy były jak najprostsze.  Po każdym przechodzącym teście pamiętaj o refactoringu.  
 
-Kata::
-* wysoce sformalizowany rodzaj ćwiczeń stosowanych w wielu tradycyjnych sztukach i sportach walki
-* sekwencje technik ataku i obrony, połączone z określonym poruszaniem, przyjęciem ściśle określonej pozycji i sposobu oddychania
-* ciągłe powtarzanie określonych czynności według zdefiniowanego schematu
+Zadanie 2. Dowolna ilość parametrów i różne separatory Spraw by kalkulator przyjmował dowolną ilość parametrów i zwracał ich sumę.  Aby zmienić separator na inny niż domyślny należy podać w parametrach wejściowych nowy separator w poniższy sposób: 
+//[delimiter]\n[numbers…​]  Pierwsza linia z separatorem jest opcjonalna  Poprzednia funkcjonalność powinna działać bez zmian.  Przykład: //[;]\n1;2 powinno zwrócić 3  
 
-Kata w programowaniu::
-* powrót do korzeni, użycie konkretnego algorytmu albo pokonanie znanego problemu logicznego czy matematycznego
+Zadanie 3. Separator dowolnej długości i liczby w odpowiednim zakresie Separator dowolnej długości Separator powinien być dowolnej długości a nie tylko ograniczony do jednego znaku.  Dłuższe separatory powinny być definiowane w następujący sposób: //[delimiter]\n[numbers…​]  
+Przykład: //[aa]\n1aa2aa3 powinno zwrócić 6.  
+Liczby w odpowiednim zakresie Dodajemy tylko liczny dodatnie:  Jeśli zostały przekazane liczby ujemne, powinien zostać rzucony wyjątek negatives not allowed.  Wszystkie ujemne liczby powinny zostać wyświetlone w wiadomości o wyjątku.  2,3,-1,6,-4 ⇒ NegativeNotAllowed("-1,-4")  Ograniczamy zakres  Liczby większe niż 1000 powinny być ignorowane.  Przykład: 2000,2,500 powinno zwrócić 502
 
-== Praca
-
-1. Pracujemy w iteracjach. Pojedyńcze zadanie to kilkanaście minut kodowania.
-** Każdy uczestnik tworzy swoją kopie projektu (fork) i tam pracuje
-2. Zadanie jest dostępne na githubie link:https://github.com/kubamarchwicki/wyzwanie-tdd-kata[]
-** Tworzymy branch, robimy zadanie, tworzymy pull requesta
-3. Codziennie rano przeglądamy podesłane rozwiązania, omawiamy, przygotowujemy referencyjną implementację.
-4. Omawiamy kolejne zadanie i wracamy do punktu **2**
-
-=== Zasady udanej katy
-
-* Pracujemy tylko nad jednym wymaganiem na raz
-* Nie interesuje nas to co będzie w następnych wymaganiach
-* Piszemy tylko tyle kodu ile jest potrzebne by wymaganie zostało spełnione
-* Testujemy tylko pozytywne scenariusze (chyba, że w wymaganiu jest inaczej)
-* Pracujemy zgodnie z zasadmi TDD – Red, Green, Refactor
-
-== Zadanie: String calculator
-
-*Tworzymy kalulator*
-
-. Kalkulator ma być prosty (naiwna implementacja)
-. Dowolna ilość parametrów
-. Liczby oddzielone znakiem (na początek przecinkiem)
-. Wsparcie dla różnych separatorów
-. Dodajemy tylko liczny dodatnie
-. Ograniczamy zakres
-. Separator dowolnej długości
-. Więcej niż jeden separator
-. Więcej niż jeden separator różnej długości
-
-== Zadanie {counter: seq}. Prosty kalkulator
-
-* Utwórz prostą metodę przyjmującą wyrażenie typu String jako parametr.
-* Metoda może przyjmować 0, 1 lub 2 liczby oddzielone przecinkami i zwraca ich sumę (pusty string zwraca 0)
-* *Przykład*: ` ` lub `1` lub `1,2`
-
-Tips::
-- Zacznij od testu dla pustego parametru.
-- Następnie test dla jednego parametru i w następnym kroku dla dwóch.
-- Pamiętaj o tym by rozwiązania, które implementujeszy były jak najprostsze.
-- Po każdym przechodzącym teście pamiętaj o refactoringu.
-
-== Zadanie {counter: seq}. ...
-
-== Credits
-
-Zadanie bazują na projekcie link:http://osherove.com/tdd-kata-1/[TDD Kata by Roy Osherove]
